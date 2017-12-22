@@ -1,0 +1,4 @@
+ Files to ignore when adding and committing files to a repository
+.idea/
+.DS_Store
+btw17.db
