@@ -1,27 +1,37 @@
 <!doctype html>
-<html>
-    <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
-		<script src="/static/js/app.js"></script>
-		<link rel="stylesheet" href="/static/css/main.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-    </head>
-    <body ng-app="myApp">
+<html ng-app='myApp'>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+    <script src="/static/js/app.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css"/>
+    	<script src="/static/js/controllers.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+</head>
+<body>
+<div ng-controller="CountryListController">
     <div class="columns">
         <div class="column">
-			<h2 class="title">Bundesland</h2>
-            </div>
+            <h2 class="title">Bundesland</h2>
+            <ul>
+                <li ng-repeat="x in countries">
+                    {{ x.gebiet }}
+                </li>
+            </ul>
+        </div>
         <div class="column">
             <h2 class="title">Wahlkreis</h2>
-            </div>
+        </div>
         <div class="column">
             <h2 class="title">Ergebnisse</h2>
-            </div>
+        </div>
 
-				</div>
+    </div>
 
-			 
-			 <div ng-view></div>
-    </body>
+
+    <div ng-view></div>
+</div>
+
+</body>
 </html>
