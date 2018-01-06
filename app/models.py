@@ -7,14 +7,15 @@ from sqlalchemy.orm import relationship
 class Gebiete(db.Model):
     __tablename__ = "Gebiete"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255))
-    gehört_zu = db.Column(db.Integer)
+    gebiet = db.Column(db.String(255))
+    belongs_to = db.Column(db.Integer)
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, gebiet, belongs_to):
+        self.gebiet = gebiet
+        self.belongs_to = belongs_to
 
     def __repr__(self):
-        return 'Gebiet {}>'.format(self.name)
+        return 'Gebiet {}>'.format(self.gebiet)
 
 
 class Parteien(db.Model):
