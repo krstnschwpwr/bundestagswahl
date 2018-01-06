@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = 'supersecret'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'btw17.db')
 db = SQLAlchemy(app)
 
-from app import models
+from app import models, views
 
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
