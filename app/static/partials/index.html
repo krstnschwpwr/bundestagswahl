@@ -2,10 +2,30 @@
 
 <p>You should head over to the <a href="/#/about">about page</a>.</p>
 
-<h2>Here's an Angular Demo:</h2>
-
 <div>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <hr>
-    <h1>Hello {{ yourName }}</h1>
+
+    <div ng-controller="CountryListController">
+        <div class="columns">
+            <div class="column">
+                <h2 class="title">Bundesland</h2>
+                <ul>
+                    <li ng-repeat="country in countries">
+                        <a ng-click="show(country.id)" target="_blank">{{country.gebiet}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2 class="title">Wahlkreis</h2>
+                <ul>
+                    <li ng-repeat="wahlkreis in wahlkreise">
+                        <a ng-click="show(wahlkreis.id)" target="_blank">{{wahlkreis.gebiet}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2 class="title">Ergebnisse</h2>
+            </div>
+
+        </div>
+    </div>
 </div>
