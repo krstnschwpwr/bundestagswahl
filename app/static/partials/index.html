@@ -9,8 +9,8 @@
             <div class="column">
                 <h2 class="title">Bundesland</h2>
                 <ul>
-                    <li ng-repeat="country in countries">
-                        <a ng-click="show(country.id)" target="_blank">{{country.gebiet}}</a>
+                    <li ng-repeat="bundesland in countries">
+                        <a ng-click="show(bundesland.id)">{{bundesland.gebiet}}</a>
                     </li>
                 </ul>
             </div>
@@ -18,12 +18,35 @@
                 <h2 class="title">Wahlkreis</h2>
                 <ul>
                     <li ng-repeat="wahlkreis in wahlkreise">
-                        <a ng-click="show(wahlkreis.id)" target="_blank">{{wahlkreis.gebiet}}</a>
+                        <a ng-click="showDetails(wahlkreis.id)">{{wahlkreis.gebiet}}</a>
                     </li>
                 </ul>
             </div>
             <div class="column">
                 <h2 class="title">Ergebnisse</h2>
+                <h3 class="with-subtitle">Wahlkreis</h3>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>
+                            row
+                        </th>
+                        <th>
+                            detail
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="(key, detail) in details">
+                            <th>
+                                {{key}}
+                            </th>
+                            <th>
+                                {{detail}}
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
