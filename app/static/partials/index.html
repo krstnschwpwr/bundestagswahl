@@ -32,7 +32,6 @@
             </div>
             <div class="column">
                 <h2 class="title">Ergebnisse</h2>
-                <h3 class="with-subtitle">Wahlkreis</h3>
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                     <thead>
                     <tr>
@@ -56,7 +55,14 @@
                     </tbody>
                 </table>
             </div>
-
+            <div class="column">
+                <h2 class="title">Graph</h2>
+                <div class="section">
+                    <canvas id="doughnut" class="chart chart-doughnut"
+                            chart-data="data" chart-labels="labels">
+                    </canvas>
+                </div>
+            </div>
         </div>
     </div>
 </div>

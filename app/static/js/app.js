@@ -2,7 +2,7 @@
 
 
 angular.module('myApp', [
-    'ngRoute'
+    'ngRoute', 'chart.js'
 ])
 
 
@@ -31,6 +31,9 @@ angular.module('myApp', [
         });
 
         $scope.show = function (bundeslandId) {
+            $scope.details = null;
+            $scope.labels = null;
+            $scope.data = null;
             $http({
                 method: 'GET',
                 url: '/api/countries/' + bundeslandId
@@ -45,6 +48,10 @@ angular.module('myApp', [
                 url: '/api/countries/detail/' + wahlkreis_id
             }).then(function (response) {
                 $scope.details = response.data;
+                $scope.labels = Object.keys(response.data);
+                $scope.data = Object.values(response.data);
             })
         };
+
+
     });
