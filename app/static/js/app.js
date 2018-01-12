@@ -27,8 +27,8 @@ angular.module('myApp', [
             method: 'GET',
             url: '/api/countries'
         }).then(function (response) {
-                $scope.countries = response.data.countries; // response data
-            });
+            $scope.countries = response.data.countries; // response data
+        });
 
         $scope.show = function (bundeslandId) {
             $http({
@@ -44,8 +44,7 @@ angular.module('myApp', [
                 method: 'GET',
                 url: '/api/countries/detail/' + wahlkreis_id
             }).then(function (response) {
-                $scope.details = response.data.details[0];
-                console.log(response.data.parteien)
+                $scope.details = response.data;
             })
         };
     });

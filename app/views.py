@@ -24,6 +24,26 @@ def get_wahlkreise(wahlkreis_id):
 
 @app.route('/api/countries/detail/<int:wahlkreisDetailId>', methods=['GET'])
 def get_details(wahlkreisDetailId):
-    parteien = Parteien.query.all()
-    details = Stimmen.query.filter(Stimmen.id == wahlkreisDetailId)
-    return jsonify(details=details_schema.dump(details).data, parteien=parteien_schema.dump(parteien).data)
+    tmpparteien = Parteien.query.all()
+    tmpdetails = Stimmen.query.filter(Stimmen.id == wahlkreisDetailId)
+    details = details_schema.dump(tmpdetails).data
+    fixeddetails = {}
+    parteien = parteien_schema.dump(tmpparteien).data
+    for detail in details[0]:
+        if detail != "id":
+            parteiid = detail[1:].split('_')
+            for partei in parteien:
+                if partei.get('id') == int(parteiid[0]):
+                    fixeddetails[partei.get('name') + " " + getvotetype(int(parteiid[1]))] = details[0].get(detail)
+
+    return jsonify(fixeddetails)
+
+
+def getvotetype(argument):
+    switcher = {
+        0: "Erststimmen Vorläufig",
+        1: "Erststimmen Vorperiode",
+        2: "Zweitstimmen Vorläufig",
+        3: "Zweitstimmen Vorperiode"
+    }
+    return switcher.get(argument, "default")
