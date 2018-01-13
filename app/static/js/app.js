@@ -6,18 +6,16 @@ angular.module('myApp', [
 ])
 
 
-    .config(['$routeProvider',
-        function ($routeProvider) {
+    .config(['$routeProvider', '$locationProvider',
+        function ($routeProvider, $locationProvider) {
             $routeProvider.when('/', {
-                //controller: 'CountryListController',
                 templateUrl: '/static/partials/index.html'
             }).when('/about', {
                 templateUrl: '../static/partials/about.html'
             }).otherwise({
                 redirectTo: '/'
             });
-            //$locationProvider.html5Mode(true);
-            //$locationProvider.hashPrefix('');
+            $locationProvider.html5Mode(true).hashPrefix('*');
         }])
 
 
