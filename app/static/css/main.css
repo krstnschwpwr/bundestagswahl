@@ -1,0 +1,51 @@
+body{ font-family: "Noto Sans";}
+
+h2.title{
+    border-bottom: 3px solid #00d1b2;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(0, 209, 178);
+    font-weight: 600;
+    margin-top: 2em;
+}
+input[type="text"], textarea {
+border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+  background-color : #363636;
+    width: auto;
+    padding-left: 0;
+
+
+}
+input[type="text"]:focus {
+background: transparent;
+box-shadow: none;
+    border-color: #00d1b2;
+    outline: 0;
+}
+input, select, textarea{
+    color: #f5f5f5 !important;
+}
+
+textarea:focus, input:focus {
+    color: #f5f5f5 !important;
+}
+.searchme input[type="text"]:after{
+    content: "\f002";
+}
+
+
+
+.fa-search{
+        position: absolute;
+    margin-top: -1.7rem;
+    margin-left: 10em;
+}
+.searchme{ float: right; margin-top: 1.2em;}
+.box{ padding-left: 2.3em !important; padding-right: 2.3em; -webkit-box-shadow: none !important; box-shadow: none !important;}
+.button.is-danger{ color: #f5f5f5 !important; text-align: center !important; display: none;}
+.con{ padding: 3rem 1.5rem;}
+.content ul{ margin-left: 0;}
+.blocky{ display: block !important;}
+#results{ display: none;}
