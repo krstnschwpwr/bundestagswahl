@@ -10,8 +10,6 @@ angular.module('myApp', [
         function ($routeProvider, $locationProvider) {
             $routeProvider.when('/', {
                 templateUrl: '/static/partials/index.html'
-            }).when('/about', {
-                templateUrl: '../static/partials/about.html'
             }).otherwise({
                 redirectTo: '/'
             });
@@ -38,6 +36,7 @@ angular.module('myApp', [
             }).then(function (response) {
                 $scope.wahlkreise = response.data.wahlkreise;
             })
+
         };
 
         $scope.showDetails = function (wahlkreis_id) {
@@ -48,8 +47,16 @@ angular.module('myApp', [
                 $scope.details = response.data;
                 $scope.labels = Object.keys(response.data);
                 $scope.data = Object.values(response.data);
+
             })
         };
 
 
+        $('.kreis ').click(function () {
+            $('.btnred').fadeIn(1000).css('display', 'block');
+        });
+        $('.button ').click(function () {
+            $('#results').fadeIn(1000).css('display', 'block');
+        });
     });
+
