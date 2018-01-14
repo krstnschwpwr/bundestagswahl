@@ -14,6 +14,7 @@ ma = Marshmallow(app)
 
 app.config['SECRET_KEY'] = 'supersecret'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'btw17.db')
+app.config['JSON_AS_ASCII'] = False
 db = SQLAlchemy(app)
 
 from app import models, views
