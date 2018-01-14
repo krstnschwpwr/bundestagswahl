@@ -35,7 +35,9 @@ angular.module('myApp', [
                 url: '/api/countries/' + bundeslandId
             }).then(function (response) {
                 $scope.wahlkreise = response.data.wahlkreise;
+
             })
+
 
         };
 
@@ -50,13 +52,23 @@ angular.module('myApp', [
 
             })
         };
-
-
         $('.kreis ').click(function () {
             $('.btnred').fadeIn(1000).css('display', 'block');
         });
         $('.button ').click(function () {
             $('#results').fadeIn(1000).css('display', 'block');
         });
+
+        $scope.selected2 = false;
+        $scope.select = function (index) {
+            $scope.selected = true;
+            $scope.selected = index;
+        };
+        $scope.sel = function (index) {
+            $scope.selected2 = true;
+            $scope.selected2 = index;
+        };
+
+
     });
 
