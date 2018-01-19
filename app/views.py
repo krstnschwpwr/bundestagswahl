@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from app import app, db
 from flask import send_file, jsonify
 from app.models import Stimmen, Gebiete, Parteien
@@ -41,9 +43,9 @@ def get_details(wahlkreisDetailId):
 
 def getvotetype(argument):
     switcher = {
-        0: "Erststimmen Vorläufig",
-        1: "Erststimmen Vorperiode",
-        2: "Zweitstimmen Vorläufig",
-        3: "Zweitstimmen Vorperiode"
+        0: u"Erststimmen Vorläufig",
+        1: u"Erststimmen Vorperiode",
+        2: u"Zweitstimmen Vorläufig",
+        3: u"Zweitstimmen Vorperiode"
     }
     return switcher.get(argument, "default")

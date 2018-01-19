@@ -74,5 +74,5 @@ dependencies:
     - backports.shutil-get-terminal-size==1.0.0
     - rope-py3k==0.9.4.post1
     - tables==3.3.0
-#prefix: /Users/kristineschwabauer/anaconda/envs/flask-app
+prefix: /Users/kristineschwabauer/anaconda/envs/flask-app
 

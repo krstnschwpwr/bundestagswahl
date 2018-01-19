@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-docker stop flaskapp
-docker rm flaskapp
+docker stop bundestagswahl
+docker rm bundestagswahl
 docker rmi -f bundestagswahl

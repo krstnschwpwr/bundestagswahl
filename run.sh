@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-docker run --name flaskapp -d -p 5000:8080 bundestagswahl
+docker run -d -p 5000:5000 bundestagswahl
